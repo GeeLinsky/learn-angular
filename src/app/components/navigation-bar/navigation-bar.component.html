@@ -1,0 +1,10 @@
+<div style="border-bottom: 1px solid;">
+  <span *ngFor="let navBarLink of navBarLinks; let i = index">
+    <a
+      [routerLink]="navBarLink.path"
+    >
+      {{ navBarLink.text }}
+    </a>
+    {{ i !== navBarLinks.length - 1 ? '•' : '' }}
+  </span>
+</div>
