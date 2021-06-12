@@ -12,6 +12,7 @@ import { InputComponent } from './components/input/input.component';
 import { OutputComponent } from './components/output/output.component';
 import { LocalVariableComponent } from './components/local-variable/local-variable.component';
 import { ViewChildComponent } from './components/view-child/view-child.component';
+import { TemplateComponent } from './components/template/template.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ViewChildComponent } from './components/view-child/view-child.component
     InputComponent,
     OutputComponent,
     LocalVariableComponent,
-    ViewChildComponent
+    ViewChildComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,
