@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class NavigationBarComponent {
   navBarLinks = [
     { text: 'Home', path: '' },
-    { text: 'What is Angular', path: 'what-is-angular' }
+    { text: 'What is Angular', path: 'what-is-angular' },
+    { text: 'Component', path: 'component' }
   ];
 }

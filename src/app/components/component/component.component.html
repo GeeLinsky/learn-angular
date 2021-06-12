@@ -1,0 +1,58 @@
+<h1>Component</h1>
+
+<h3>Overview of <code><a href="https://angular.io/api/core/Component" target="_blank">@Component</a></code> decorator...</h3>
+
+<ul>
+  <li>selector</li>
+  <li>templateUrl</li>
+  <li>styleUrls</li>
+</ul>
+
+<h3>Component Lifecycle</h3>
+
+<ul>
+  <li>
+    <code>ngOnChanges()</code>
+    <ul>
+      <li>Called when input properties change.</li>
+      <li>Method has a <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a> object with current, and previous property values.</li>
+    </ul>
+  </li>
+  <li>
+    <code>ngOnInit()</code>
+    <ul>
+      <li>Called when component or directive first loads.</li>
+    </ul>
+  </li>
+  <li><a href="https://angular.io/guide/lifecycle-hooks#lifecycle-event-sequence" target="_blank">Many more!</a></li>
+</ul>
+
+<h3>Passing data from parent to child</h3>
+
+<p>Pass data from parent to child using the <a href="https://angular.io/api/core/Input" target="_blank"><code>@Input()</code></a> decorator.</p>
+
+<input [(ngModel)]="parentInput">
+<p><code>parentInput: </code>{{ parentInput }}</p>
+<app-input [childInput]="parentInput"></app-input>
+
+<h3>Passing data from child to parent</h3>
+
+<p>Pass data from child to parent using the <a href="https://angular.io/api/core/Output" target="_blank"><code>@Output()</code></a> decorator, and the <a href="https://angular.io/api/core/EventEmitter" target="_blank">EventEmitter</a>.</p>
+
+<app-output (childOutputEmitter)="parentOutput = $event"></app-output>
+<p><code>parentOutput: </code>{{ parentOutput }}</p>
+
+<h3>Parent interact with child via local variable</h3>
+
+<app-local-variable #localVariableComponent></app-local-variable>
+<p>{{ localVariableComponent.randomNumber }}</p>
+<button (click)="localVariableComponent.generateRandomNumber()">Random Number</button>
+
+<h3>Parent interact with child via <code>@ViewChild()</code></h3>
+
+<p>A parent interacting with a child via local variable is limiting. This is due to the parent having interaction with the child <b>only</b> in its (parent) template. With <a href="https://angular.io/api/core/ViewChild" target="_blank">ViewChild</a>, you are able to have interaction with the child in its (parent) component.</p>
+
+<button (click)="onChangeFEDChairmanClick()">Change FED Chairman</button>
+<div>
+  <app-view-child #viewChildComponent></app-view-child>
+</div>
