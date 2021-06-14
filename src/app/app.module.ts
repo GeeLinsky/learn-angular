@@ -13,6 +13,7 @@ import { OutputComponent } from './components/output/output.component';
 import { LocalVariableComponent } from './components/local-variable/local-variable.component';
 import { ViewChildComponent } from './components/view-child/view-child.component';
 import { TemplateComponent } from './components/template/template.component';
+import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TemplateComponent } from './components/template/template.component';
     OutputComponent,
     LocalVariableComponent,
     ViewChildComponent,
-    TemplateComponent
+    TemplateComponent,
+    TwoWayBindingComponent
   ],
   imports: [
     BrowserModule,

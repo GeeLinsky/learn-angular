@@ -42,6 +42,21 @@
 <app-output (childOutputEmitter)="parentOutput = $event"></app-output>
 <p><code>parentOutput: </code>{{ parentOutput }}</p>
 
+<h3>Two-way binding</h3>
+
+<p><a href="https://angular.io/guide/two-way-binding" target="_blank">Two-way binding</a> combines both property binding (<code>[]</code>) and event binding (<code>()</code>).</p>
+
+<p>You need to follow the following syntax for two-way binding to work:</p>
+
+<ul>
+  <li>If <code>@Input()</code> property equals <code>count</code>.</li>
+  <li>Then <code>@Output()</code> property needs to equal <code>countChange</code>.</li>
+</ul>
+
+<p><code>parentCount: </code>{{ parentCount }}</p>
+<app-two-way-binding [(childCount)]="parentCount"></app-two-way-binding>
+<!-- <app-two-way-binding [childCount]="parentCount" (childCountChange)="parentCount = $event"></app-two-way-binding> -->
+
 <h3>Parent interact with child via local variable</h3>
 
 <app-local-variable #localVariableComponent></app-local-variable>

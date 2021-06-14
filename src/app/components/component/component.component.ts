@@ -12,6 +12,7 @@ export class ComponentComponent {
   parentOutput!: string;
   @ViewChild('viewChildComponent')
   viewChildComponent!: ViewChildComponent;
+  parentCount: number = 0;
 
   onChangeFEDChairmanClick(): void {
     this.viewChildComponent.nextFEDChairman();

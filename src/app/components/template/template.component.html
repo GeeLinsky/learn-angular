@@ -1,1 +1,134 @@
 <h1>Template</h1>
+
+<h3>Text interpolation</h3>
+
+<p>Inject dynamic string values into your templates with <a href="https://angular.io/guide/interpolation" target="_blank">text interpolation</a>. </p>
+
+<p>Text interpolation uses double curly braces <code>{{</code> ... <code>}}</code> as delimiters.</p>
+
+<p>Nickname: {{ nickname }}</p>
+
+<h3>Template expressions</h3>
+
+<p>The text between the double curly braces is a <a href="https://angular.io/guide/interpolation#template-expressions" target="_blank">template expression
+</a>. Angular evaluates the template expression, then converts it to a string.</p>
+
+<p>2 * 5 = {{ 2 * 5 }}</p>
+<p>{{ true }} && {{ false }} = {{ true && false }}</p>
+
+<p>You can also call methods from the component:</p>
+
+<p>{{ leet[0] }} join {{ leet[1] }} equals {{ leetJoin() }}</p>
+
+<h3>Template statements/event binding</h3>
+
+<p><a href="https://angular.io/guide/template-statements" target="_blank">Template statements</a>/<a href="https://angular.io/guide/event-binding" target="_blank">event binding</a> are properties or methods that you can use in your templates to respond to user events.</p>
+
+<p>Syntax follows as: <code>(event)="statement"</code></p>
+
+<button (click)="flipBool1()">{{ bool1 }}</button>
+
+<h3>Pipes</h3>
+
+<p><a href="https://angular.io/guide/pipes" target="_blank">Pipes</a> are simple functions used in template expressions to transform input values.</p>
+
+<p>Complete list of built in pipes:</p>
+
+<ul>
+  <li *ngFor="let builtInPipes of builtInPipes">{{ builtInPipes }}</li>
+</ul>
+
+<p>{{ today }}</p>
+<p>{{ today | date }}</p>
+
+<h3>Pipes with parameters</h3>
+
+<p>{{ num1 | currency }}</p>
+<p>{{ num1 | currency: 'EUR' }}</p>
+<p>{{ num1 | currency: 'JPY': 'Japanese Yen ' }}</p>
+
+<h3>Chained pipes</h3>
+
+<p>{{ today | date | uppercase }}</p>
+
+<h3>Property binding</h3>
+
+<p><a href="https://angular.io/guide/property-binding" target="_blank">Property binding</a> sets values for properties of HTML elements or directives.</p>
+
+<img [src]="chevyTahoeImageUrl" style="max-height: 250px;">
+
+<h3>Text interpolation vs Property binding</h3>
+
+<p>From <a href="https://angular.io/guide/property-binding#property-binding-and-interpolation" target="_blank">Angular</a>:</p>
+
+<blockquote>You can use either form when rendering data values as strings, though interpolation is preferable for readability. However, when setting an element property to a non-string data value, you must use property binding.</blockquote>
+
+<button (click)="isEvilAnakin = !isEvilAnakin">{{ isEvilAnakin ? 'Good' : 'Evil' }} Anakin</button>
+
+<div>
+  <img src="{{ whichAnakin() }}" style="max-height: 250px;">
+</div>
+<div>
+  <img [src]="whichAnakin()" style="max-height: 250px;">
+</div>
+
+<button (click)="isDisabled = !isDisabled">{{ isDisabled ? 'Enable' : 'Disable' }}</button>
+
+<div>
+  <p>Text interpolation:</p>
+  <input disabled="{{ isDisabled }}">
+</div>
+<div>
+  <p>Property binding:</p>
+  <input [disabled]="isDisabled">
+</div>
+
+<h3>Class bindings</h3>
+
+<p><a href="https://angular.io/guide/attribute-binding#binding-to-the-class-attribute" target="_blank">Class bindings</a> allow you to set your classes dynamically.</p>
+
+<p>Regular class:</p>
+<p class="color-red background-color-yellow">This is a paragraph.</p>
+
+<p>Binding to a single CSS class:</p>
+<button (click)="triggerClass = !triggerClass">{{ triggerClass ? 'Off' : 'On' }}</button>
+<p [class.color-red]="triggerClass">This is a paragraph.</p>
+
+<p>Binding to multiple CSS classes (string, array, or object).</p>
+<p>String:</p>
+<p [class]="'color-red background-color-yellow'">This is a paragraph.</p>
+<p>Array:</p>
+<p [class]="['color-red', 'background-color-yellow']">This is a paragraph.</p>
+<p>Object:</p>
+<button (click)="triggerClass = !triggerClass">{{ triggerClass ? 'Off' : 'On' }}</button>
+<p [class]="{ 'color-red': triggerClass, 'background-color-yellow': !triggerClass }">This is a paragraph.</p>
+
+<h3>Style bindings</h3>
+
+<p><a href="https://angular.io/guide/attribute-binding#binding-to-the-style-attribute" target="_blank">Style bindings</a> allow you to set your styles dynamically. You can write a style property name in either dash-case, or camelCase.</p>
+
+<p>Regular style:</p>
+<p style="font-size: 24px;">This is a paragraph.</p>
+
+<p>Binding to a single style:</p>
+<button (click)="triggerColor = !triggerColor">{{ triggerColor ? 'Off' : 'On' }}</button>
+<p [style.backgroundColor]="whichColor()">This is a paragraph.</p>
+
+<p>Binding to a single style (with units):</p>
+<button (click)="triggerPX = !triggerPX">{{ triggerPX ? 'Off' : 'On' }}</button>
+<p [style.font-size.px]="whichPX()">This is a paragraph.</p>
+
+<p>Binding to multiple styles (string, or object):</p>
+<p>String:</p>
+<p [style]="'color: white; backgroundColor: brown;'">This is a paragraph.</p>
+<p>Object:</p>
+<p>This is a paragraph.</p>
+<button (click)="triggerColor = !triggerColor">{{ triggerColor ? 'Off' : 'On' }}</button>
+<p [style]="{ backgroundColor: whichColor(), fontSize: '32px' }">This is a paragraph.</p>
+
+<h3>Template reference variables</h3>
+
+<p><a href="https://angular.io/guide/template-reference-variables" target="_blank">Template reference variables</a> can use data from one part of a template in another part of the template. You use the hash symbol (<code>#</code>) to create a template variable.</p>
+
+<input #name placeholder="Enter name">
+<button (click)="consoleLog(name.value)">Log name</button>
