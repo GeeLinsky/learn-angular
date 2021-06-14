@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent {
-  navBarLinks = [
+  navBarLinks: { text: string, path: string }[] = [
     { text: 'Home', path: '' },
     { text: 'What is Angular', path: 'what-is-angular' },
     { text: 'Template', path: 'template' },

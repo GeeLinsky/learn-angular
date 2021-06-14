@@ -14,4 +14,12 @@
   </li>
 </ul>
 
-<h3>File structure...</h3>
+<h3>File structure</h3>
+
+<ul>
+  <li *ngFor="let fileStructure of fileStructures">
+    <a [href]="fileStructure.url" target="_blank">
+      {{ fileStructure.text }}
+    </a>
+  </li>
+</ul>
