@@ -126,6 +126,12 @@
 <button (click)="triggerColor = !triggerColor">{{ triggerColor ? 'Off' : 'On' }}</button>
 <p [style]="{ backgroundColor: whichColor(), fontSize: '32px' }">This is a paragraph.</p>
 
+<h3>class vs <a href="https://angular.io/api/common/NgClass" target="_blank">NgClass</a> & style vs <a href="https://angular.io/api/common/NgStyle" target="_blank">NgStyle</a></h3>
+
+<p>From <a href="https://angular.io/guide/attribute-binding#single-and-multiple-style-binding-example" target="_blank">Angular</a>:</p>
+
+<blockquote>The NgStyle directive can be used as an alternative to direct [style] bindings. However, using the above style binding syntax without NgStyle is preferred because due to improvements in style binding in Angular, NgStyle no longer provides significant value, and might eventually be removed in the future.</blockquote>
+
 <h3>Template reference variables</h3>
 
 <p><a href="https://angular.io/guide/template-reference-variables" target="_blank">Template reference variables</a> can use data from one part of a template in another part of the template. You use the hash symbol (<code>#</code>) to create a template variable.</p>

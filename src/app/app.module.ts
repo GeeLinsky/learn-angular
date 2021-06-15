@@ -14,6 +14,7 @@ import { LocalVariableComponent } from './components/local-variable/local-variab
 import { ViewChildComponent } from './components/view-child/view-child.component';
 import { TemplateComponent } from './components/template/template.component';
 import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
+import { DirectiveComponent } from './components/directive/directive.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TwoWayBindingComponent } from './components/two-way-binding/two-way-bin
     LocalVariableComponent,
     ViewChildComponent,
     TemplateComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    DirectiveComponent
   ],
   imports: [
     BrowserModule,

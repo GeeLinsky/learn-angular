@@ -1,0 +1,69 @@
+<h1>Directive</h1>
+
+<p><a href="https://angular.io/guide/built-in-directives" target="_blank">Directives</a> add additional behavior to elements in your templates.</p>
+
+<p>Three different types of directives:</p>
+
+<ul>
+  <li>
+    Components
+    <ul>
+      <li>Directives with a template.</li>
+    </ul>
+  </li>
+  <li>
+    Attribute directives
+    <ul>
+      <li>Directives that change the appearance or behavior of an element, component, or another directive.</li>
+    </ul>
+  </li>
+  <li>
+    Structural directives
+    <ul>
+      <li>Directives that change the DOM layout by adding and removing DOM elements.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>NgModel</h3>
+
+<p><a href="https://angular.io/guide/built-in-directives#displaying-and-updating-properties-with-ngmodel" target="_blank">NgModel</a> allows you to display a data property and update that property when the user makes input changes.</p>
+
+<input [(ngModel)]="input1">
+<p><code>input1</code>: {{ input1 }}</p>
+
+<input [ngModel]="inputAndEmoji" (ngModelChange)="appendRandomEmoji($event)">
+<p><code>inputAndEmoji</code>: {{ inputAndEmoji }}</p>
+
+<h3>NgIf</h3>
+
+<p><a href="https://angular.io/guide/built-in-directives#adding-or-removing-an-element-with-ngif" target="_blank">NgIf</a> adds or removes an element.</p>
+
+<button (click)="showTopo = !showTopo">Show Topo!</button>
+<div>
+  <img
+    *ngIf="showTopo"
+    src="https://images-na.ssl-images-amazon.com/images/I/41hARDS4loL._SX466_PIbundle-12,TopRight,0,0_SX466SY460SH20_.jpg" style="max-height: 250px;"
+  >
+</div>
+
+<h3>NgFor</h3>
+
+<p><a href="https://angular.io/guide/built-in-directives#listing-items-with-ngfor" target="_blank">NgFor</a> presents a list.</p>
+
+<ul>
+  <li *ngFor="let name of names">{{ name.firstName }} "{{ name.quoteName }}"</li>
+</ul>
+
+<h3>NgSwitch</h3>
+
+<p><a href="https://angular.io/guide/built-in-directives#switching-cases-with-ngswitch" target="_blank">NgSwitch</a> displays one element from among several possible elements, based on a switch condition.</p>
+
+<input [(ngModel)]="beanName">
+
+<div [ngSwitch]="beanName">
+  <img *ngSwitchCase="'pinto'" src="https://m.media-amazon.com/images/I/71AFQ4DhraL._SL1500_.jpg" style="max-height: 250px;">
+  <img *ngSwitchCase="'butter'" src="https://www.bushbeans.com/-/media/bushsbeans/salsifyimports/0003940001670_H1N1_R.png" style="max-height: 250px;">
+  <img *ngSwitchCase="'baked'" src="https://images-na.ssl-images-amazon.com/images/I/81jSxkIyr%2BL._SL1500_.jpg" style="max-height: 250px;">
+  <img *ngSwitchDefault src="https://images-na.ssl-images-amazon.com/images/I/712VWKBpMDL._SL1500_.jpg" style="max-height: 250px;">
+</div>
