@@ -1,0 +1,13 @@
+<h1>Dependency Injection</h1>
+
+<p><a href="https://angular.io/guide/dependency-injection" target="_blank">Dependency injection</a> (DI) is a technique in which a class requests dependencies from external sources rather than creating them. The <a href="https://angular.io/api/core/Injectable" target="_blank"><code>@Injectable()</code></a> decorator specifies that Angular can use this class in the DI system. To inject a dependency in a component's <code>constructor()</code>, supply a constructor argument with the dependency type.</p>
+
+<div>
+  <input type="number" [(ngModel)]="inputId">
+  <button (click)="fetchPerson()">Fetch ID {{ inputId }}</button>
+  <button (click)="clear()">Clear</button>
+</div>
+
+<p *ngIf="isLoading">Loading...</p>
+
+<p *ngIf="!isLoading && person"><code [innerHTML]="person | prettyJson"></code></p>

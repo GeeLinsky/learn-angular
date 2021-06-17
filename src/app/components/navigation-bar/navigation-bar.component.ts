@@ -11,6 +11,7 @@ export class NavigationBarComponent {
     { text: 'What is Angular', path: 'what-is-angular' },
     { text: 'Template', path: 'template' },
     { text: 'Component', path: 'component' },
-    { text: 'Directive', path: 'directive' }
+    { text: 'Directive', path: 'directive' },
+    { text: 'Dependency Injection', path: 'dependency-injection' }
   ];
 }
